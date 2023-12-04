@@ -6,25 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  resultado: string = "0";
-  memoria: string = "";
+  resultado: string = '0';
+  memoria: string = '';
   verifica_zero: boolean = true;
   operador_inserido: boolean = false;
   is_segundo_elemento: boolean = false;
-  primeiro_elemento: string = "";
-  segundo_elemento: string = "";
-  operador: string = "";
+  primeiro_elemento: string = '';
+  segundo_elemento: string = '';
+  operador: string = '';
   is_novo_calculo: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   digitos(valor: string) {
-    if (this.resultado === '0' && valor !== '0') {
-      this.resultado = valor;
-      this.verifica_zero = false;
-    } else {
-     if (this.is_novo_calculo) {
+    if (this.is_novo_calculo) {
       this.resetar();
       if (this.is_segundo_elemento) {
         this.segundo_elemento += valor;
@@ -50,7 +45,6 @@ export class HomePage {
         }
       }
     }
-    } 
   }
 
   operadores(operador: string) {
@@ -61,39 +55,6 @@ export class HomePage {
       this.operador = operador;
       this.is_segundo_elemento = true;
     }
-  }
-    
-  calcular() {
-    if (this.operador === '+' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else if (this.operador === '-' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else if (this.operador === '*' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else  if (this.operador === '/' && this.segundo_elemento !== '') {
-      const segundoNumero = parseFloat(this.segundo_elemento);
-      if (segundoNumero === 0) {
-        this.resultado = 'Erro';
-        return;
-      }
-      this.resultado = (parseFloat(this.primeiro_elemento) / segundoNumero).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else {
-      if (this.operador === '') {
-        alert('Nenhum operador foi selecionado.');
-      } else {
-        alert('O segundo elemento não foi definido.');
-      }
-    }
-    this.memoria = '';
-    this.is_novo_calculo = true;
   }
 
   porcentagem() {
@@ -116,8 +77,7 @@ export class HomePage {
       if (currentValue >= 0) {
         this.resultado = Math.sqrt(currentValue).toString();
       } else {
-        this.resultado = "Erro";
-        
+        this.resultado = 'Erro';
       }
     }
   }
@@ -135,7 +95,7 @@ export class HomePage {
       if (currentValue >= 0) {
         this.resultado = Math.cbrt(currentValue).toString();
       } else {
-        this.resultado = "Erro";
+        this.resultado = 'Erro';
       }
     }
   }
@@ -150,34 +110,101 @@ export class HomePage {
     }
   }
 
+  adicionarDecimal() {
+    if (this.is_segundo_elemento && !this.segundo_elemento.includes('.')) {
+      this.segundo_elemento += '.';
+      this.resultado += '.';
+    } else if (
+      !this.is_segundo_elemento &&
+      !this.primeiro_elemento.includes('.')
+    ) {
+      this.primeiro_elemento += '.';
+      this.resultado += '.';
+    }
+  }
 
+  apagarUltimo() {
+    if (this.resultado.length > 0) {
+      this.resultado = this.resultado.slice(0, -1);
+    }
+  }
 
   calcularFatorial() {
-    if (this.resultado.includes('.')) {
-      this.resultado = 'Erro';
-      return;
-    }
     if (this.resultado === '') return;
     const num = parseInt(this.resultado);
     if (num < 0) {
-      this.resultado = "Erro";
+      alert('O fatorial de um número negativo não é definido.');
       return;
     }
     let fatorial = 1;
     for (let i = 2; i <= num; i++) {
       fatorial *= i;
     }
-    this.resultado = fatorial.toString(); 
-  }  
-  
+    this.resultado = fatorial.toString();
+  }
+
+  calcular() {
+    if (this.operador === '+' && this.segundo_elemento !== '') {
+      this.resultado = (
+        parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)
+      ).toString();
+      this.memoria =
+        this.primeiro_elemento +
+        this.operador +
+        this.segundo_elemento +
+        '=' +
+        this.resultado;
+      this.is_novo_calculo = true;
+    } else if (this.operador === '-' && this.segundo_elemento !== '') {
+      this.resultado = (
+        parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)
+      ).toString();
+      this.memoria =
+        this.primeiro_elemento +
+        this.operador +
+        this.segundo_elemento +
+        '=' +
+        this.resultado;
+      this.is_novo_calculo = true;
+    } else if (this.operador === '*' && this.segundo_elemento !== '') {
+      this.resultado = (
+        parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)
+      ).toString();
+      this.memoria =
+        this.primeiro_elemento +
+        this.operador +
+        this.segundo_elemento +
+        '=' +
+        this.resultado;
+      this.is_novo_calculo = true;
+    } else if (this.operador === '/' && this.segundo_elemento !== '') {
+      this.resultado = (
+        parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)
+      ).toString();
+      this.memoria =
+        this.primeiro_elemento +
+        this.operador +
+        this.segundo_elemento +
+        '=' +
+        this.resultado;
+      this.is_novo_calculo = true;
+    } else {
+      if (this.operador === '') {
+        alert('Nenhum operador foi selecionado.');
+      } else {
+        alert('O segundo elemento não foi definido.');
+      }
+    }
+  }
+
   resetar() {
-    this.resultado = "0";
+    this.resultado = '0';
     this.verifica_zero = true;
     this.operador_inserido = false;
     this.is_segundo_elemento = false;
-    this.primeiro_elemento = "";
-    this.segundo_elemento = "";
-    this.operador = "";
+    this.primeiro_elemento = '';
+    this.segundo_elemento = '';
+    this.operador = '';
     this.is_novo_calculo = false;
   }
 }
