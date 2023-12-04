@@ -2,90 +2,89 @@
   <ion-grid id="container">
     <h3>{{memoria}}</h3>
     <h1>{{resultado}}</h1>
-    
+
     <ion-row>
       <ion-col>
-        <ion-button (click)="calcularFatorial()">!</ion-button>
+        <ion-button class="acao" (click)="calcularFatorial()">!</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="trocarSinal()">+/-</ion-button>
+        <ion-button class="acao" (click)="trocarSinal()">+/-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="porcentagem()">%</ion-button>
+        <ion-button class="acao" (click)="porcentagem()">%</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="operadores('/')">÷</ion-button>
+        <ion-button class="operador" (click)="operadores('/')">÷</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="raizCubica()">³√</ion-button>
+        <ion-button class="acao" (click)="raizCubica()">³√</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="digitos('7')">7</ion-button>
+        <ion-button class="acao" (click)="digitos('7')">7</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('8')">8</ion-button>
+        <ion-button class="acao" (click)="digitos('8')">8</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('9')">9</ion-button>
+        <ion-button class="acao" (click)="digitos('9')">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="operadores('*')">x</ion-button>
+        <ion-button class="operador" (click)="operadores('*')">x</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="raizQuadrada()">√</ion-button>
+        <ion-button class="operador" (click)="raizQuadrada()">√</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="digitos('4')">4</ion-button>
+        <ion-button class="acao" (click)="digitos('4')">4</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('5')">5</ion-button>
+        <ion-button class="acao" (click)="digitos('5')">5</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('6')">6</ion-button>
+        <ion-button class="acao" (click)="digitos('6')">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="operadores('-')">-</ion-button>
+        <ion-button class="operador" (click)="operadores('-')">-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="cubo()">x³</ion-button>
+        <ion-button class="acao" (click)="cubo()">x³</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="digitos('1')">1</ion-button>
+        <ion-button class="acao" (click)="digitos('1')">1</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('2')">2</ion-button>
+        <ion-button class="acao" (click)="digitos('2')">2</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="digitos('3')">3</ion-button>
+        <ion-button class="acao" (click)="digitos('3')">3</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="operadores('+')">+</ion-button>
+        <ion-button class="operador" (click)="operadores('+')">+</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="quadrado()">x²</ion-button>
+        <ion-button class="operador" (click)="quadrado()">x²</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <ion-button (click)="digitos('0')">0</ion-button>
+        <ion-button class="acao" (click)="digitos('0')">0</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="resetar()">C</ion-button>
+        <ion-button class="acao" (click)="resetar()">C</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="calcular()">=</ion-button>
+        <ion-button class="igual" (click)="calcular()">=</ion-button>
       </ion-col>
     </ion-row>
-
   </ion-grid>
 </ion-content>
