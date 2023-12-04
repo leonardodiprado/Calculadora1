@@ -2,22 +2,22 @@
   <ion-grid id="container">
     <h3>{{memoria}}</h3>
     <h1>{{resultado}}</h1>
-
+    
     <ion-row>
       <ion-col>
-        <ion-button class="acao" (click)="calcularFatorial()">!</ion-button>
+        <ion-button (click)="calcularFatorial()">!</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="trocarSinal()">+/-</ion-button>
+        <ion-button (click)="trocarSinal()">+/-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="porcentagem()">%</ion-button>
+        <ion-button (click)="porcentagem()">%</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="operadores('/')">/</ion-button>
+        <ion-button (click)="operadores('/')">÷</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="raizCubica()">³√</ion-button>
+        <ion-button (click)="raizCubica()">³√</ion-button>
       </ion-col>
     </ion-row>
 
@@ -32,10 +32,10 @@
         <ion-button (click)="digitos('9')">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="operadores('*')">*</ion-button>
+        <ion-button (click)="operadores('*')">x</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="raizQuadrada()">√</ion-button>
+        <ion-button (click)="raizQuadrada()">√</ion-button>
       </ion-col>
     </ion-row>
 
@@ -50,10 +50,10 @@
         <ion-button (click)="digitos('6')">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="operadores('-')">-</ion-button>
+        <ion-button (click)="operadores('-')">-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="cubo()">x³</ion-button>
+        <ion-button (click)="cubo()">x³</ion-button>
       </ion-col>
     </ion-row>
 
@@ -68,10 +68,10 @@
         <ion-button (click)="digitos('3')">3</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="operadores('+')">+</ion-button>
+        <ion-button (click)="operadores('+')">+</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="operador" (click)="quadrado()">x²</ion-button>
+        <ion-button (click)="quadrado()">x²</ion-button>
       </ion-col>
     </ion-row>
 
@@ -80,17 +80,12 @@
         <ion-button (click)="digitos('0')">0</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="adicionarDecimal()">.</ion-button>
+        <ion-button (click)="resetar()">C</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="acao" (click)="apagarUltimo()">Del</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button class="acao" (click)="resetar()">C</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button class="igual" (click)="calcular()">=</ion-button>
+        <ion-button (click)="calcular()">=</ion-button>
       </ion-col>
     </ion-row>
+
   </ion-grid>
 </ion-content>
