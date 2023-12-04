@@ -20,7 +20,11 @@ export class HomePage {
   constructor() { }
 
   digitos(valor: string) {
-    if (this.is_novo_calculo) {
+    if (this.resultado === '0' && valor !== '0') {
+      this.resultado = valor;
+      this.verifica_zero = false;
+    } else {
+     if (this.is_novo_calculo) {
       this.resetar();
       if (this.is_segundo_elemento) {
         this.segundo_elemento += valor;
@@ -46,6 +50,7 @@ export class HomePage {
         }
       }
     }
+    } 
   }
 
   operadores(operador: string) {
@@ -56,6 +61,39 @@ export class HomePage {
       this.operador = operador;
       this.is_segundo_elemento = true;
     }
+  }
+    
+  calcular() {
+    if (this.operador === '+' && this.segundo_elemento !== '') {
+      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
+      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
+      this.is_novo_calculo = true;
+    } else if (this.operador === '-' && this.segundo_elemento !== '') {
+      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
+      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
+      this.is_novo_calculo = true;
+    } else if (this.operador === '*' && this.segundo_elemento !== '') {
+      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
+      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
+      this.is_novo_calculo = true;
+    } else  if (this.operador === '/' && this.segundo_elemento !== '') {
+      const segundoNumero = parseFloat(this.segundo_elemento);
+      if (segundoNumero === 0) {
+        this.resultado = 'Erro';
+        return;
+      }
+      this.resultado = (parseFloat(this.primeiro_elemento) / segundoNumero).toString();
+      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
+      this.is_novo_calculo = true;
+    } else {
+      if (this.operador === '') {
+        alert('Nenhum operador foi selecionado.');
+      } else {
+        alert('O segundo elemento não foi definido.');
+      }
+    }
+    this.memoria = '';
+    this.is_novo_calculo = true;
   }
 
   porcentagem() {
@@ -111,13 +149,14 @@ export class HomePage {
       }
     }
   }
-  apagarUltimo() {
-    if (!this.is_novo_calculo && this.resultado.length > 0) {
-      this.resultado = this.resultado.slice(0, -1);
-    }
-  }
-  
+
+
+
   calcularFatorial() {
+    if (this.resultado.includes('.')) {
+      this.resultado = 'Erro';
+      return;
+    }
     if (this.resultado === '') return;
     const num = parseInt(this.resultado);
     if (num < 0) {
@@ -128,40 +167,8 @@ export class HomePage {
     for (let i = 2; i <= num; i++) {
       fatorial *= i;
     }
-    this.resultado = fatorial.toString();
-  }
-  
-  
-  calcular() {
-    if (this.operador === '+' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else if (this.operador === '-' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else if (this.operador === '*' && this.segundo_elemento !== '') {
-      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else  if (this.operador === '/' && this.segundo_elemento !== '') {
-      const segundoNumero = parseFloat(this.segundo_elemento);
-      if (segundoNumero === 0) {
-        this.resultado = 'Erro';
-        return;
-      }
-      this.resultado = (parseFloat(this.primeiro_elemento) / segundoNumero).toString();
-      this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
-      this.is_novo_calculo = true;
-    } else {
-      if (this.operador === '') {
-        alert('Nenhum operador foi selecionado.');
-      } else {
-        alert('O segundo elemento não foi definido.');
-      }
-    }
-  }
+    this.resultado = fatorial.toString(); 
+  }  
   
   resetar() {
     this.resultado = "0";
