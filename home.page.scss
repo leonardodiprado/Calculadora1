@@ -1,30 +1,73 @@
+ion-content {
+  --background: #000000;
+}
+
 #container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%); 
-  background-color: #574d4d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Posiciona o conteúdo à direita */
+  padding-top: 20px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+h3 {
+  font-size: 18px;
+  color: #ffffff;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
+h1 {
+  font-size: 36px;
+  margin: 20px 0;
+  color: #ffffff; /* Cor mais escura */
 }
 
-#container a {
-  text-decoration: none;
+ion-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
-h1, h3 {
-  text-align: right;
-  padding-right: 10%;
+ion-col {
+  display: flex;
+  justify-content: center;
+}
+
+ion-button {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  --border-radius: 10px;
+  --background: #e0e0e0;
+  --color: #000;
+  margin: 5px;
+}
+
+ion-button.digitos-button {
+  --background: #fff;
+  --color: #000;
+}
+
+ion-button.resetar-button {
+  width: calc(60px * 2 + 5px); /* Tamanho igual ao botão '=' */
+  --background: #ff5c33;
+  --color: #fff;
+}
+
+ion-button.calcular-button {
+  width: calc(60px * 2 + 5px); /* Tamanho igual ao botão 'C' e 'Cálculo' */
+  --background: #4d94ff;
+  --color: #fff;
+}
+
+/* Estilos para telas menores (mobile) */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  
+  ion-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
