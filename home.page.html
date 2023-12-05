@@ -5,87 +5,84 @@
     
     <ion-row>
       <ion-col>
-        <ion-button (click)="calcularFatorial()">!</ion-button>
+        <ion-button class="fatorial-button" (click)="calcularFatorial()">!</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="trocarSinal()">+/-</ion-button>
+        <ion-button class="sinal-button" (click)="trocarSinal()">+/-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="porcentagem()">%</ion-button>
+        <ion-button class="porcentagem-button" (click)="porcentagem()">%</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="operadores('/')">÷</ion-button>
+        <ion-button class="divisao-button" (click)="operadores('/')">÷</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="raizCubica()">³√</ion-button>
+        <ion-button class="raiz-cubica-button" (click)="raizCubica()">³√</ion-button>
       </ion-col>
     </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="digitos('7')">7</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('8')">8</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('9')">9</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="operadores('*')">x</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="raizQuadrada()">√</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="digitos('4')">4</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('5')">5</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('6')">6</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="operadores('-')">-</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="cubo()">x³</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="digitos('1')">1</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('2')">2</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="digitos('3')">3</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="operadores('+')">+</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="quadrado()">x²</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="digitos('0')">0</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="resetar()">C</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="calcular()">=</ion-button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
-</ion-content>
+        <ion-row>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('7')">7</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('8')">8</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('9')">9</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="multiplicacao-button" (click)="operadores('*')">x</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="raiz-quadrada-button" (click)="raizQuadrada()">√</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('4')">4</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('5')">5</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('6')">6</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="subtracao-button" (click)="operadores('-')">-</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="cubo-button" (click)="cubo()">x³</ion-button>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('1')">1</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('2')">2</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('3')">3</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="adicao-button" (click)="operadores('+')">+</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="quadrado-button" (click)="quadrado()">x²</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="digitos-button" (click)="digitos('0')">0</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="resetar-button" (click)="resetar()">C</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="calcular-button" (click)="calcular()">=</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+    
