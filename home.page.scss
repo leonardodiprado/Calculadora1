@@ -5,7 +5,7 @@ ion-content {
 #container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Posiciona o conteúdo à direita */
+  align-items: flex-end;
   padding-top: 20px;
 }
 
@@ -17,8 +17,7 @@ h3 {
 h1 {
   font-size: 36px;
   margin: 20px 0;
-  color: #ffffff; /* Cor mais escura */
-}
+  color: #ffffff; 
 
 ion-row {
   width: 100%;
@@ -48,18 +47,18 @@ ion-button.digitos-button {
 }
 
 ion-button.resetar-button {
-  width: calc(60px * 2 + 5px); /* Tamanho igual ao botão '=' */
+  width: calc(60px * 2 + 5px); 
   --background: #ff5c33;
   --color: #fff;
 }
 
 ion-button.calcular-button {
-  width: calc(60px * 2 + 5px); /* Tamanho igual ao botão 'C' e 'Cálculo' */
+  width: calc(60px * 2 + 5px);
   --background: #4d94ff;
   --color: #fff;
 }
 
-/* Estilos para telas menores (mobile) */
+/* Mobile */
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 28px;
