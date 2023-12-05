@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-grid id="container">
     <h3>{{memoria}}</h3>
-    <h1>{{resultado}}</h1>
+    <h1 class="resultado">{{resultado}}</h1>
     
     <ion-row>
       <ion-col>
@@ -74,7 +74,7 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-button class="digitos-button" (click)="digitos('0')">0</ion-button>
+            <ion-button class="zero-button" (click)="digitos('0')">0</ion-button>
           </ion-col>
           <ion-col>
             <ion-button class="resetar-button" (click)="resetar()">C</ion-button>
