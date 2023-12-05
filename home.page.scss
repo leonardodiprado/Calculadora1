@@ -8,12 +8,12 @@
 }
 
 h3 {
-  font-size: 18px;
-  color: #ffffff;
+  font-size: 25px;
+  color: #ffd000e8;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 50px;
   margin: 20px 0;
   color: #ffffff;
 }
@@ -34,19 +34,23 @@ ion-col {
 ion-button {
   width: 60px;
   height: 60px;
-  font-size: 24px;
-  --border-radius: 10px;
-  --background: #f8f8f8;
-  --color: #333;
+  font-size: 25px;
+  --border-radius: 5px;
+  --background: #c9c9c9;
+  --color: #2e2e2e;
   margin: 0; 
 }  
 
-
 ion-button.digitos-button {
-  --background: #c0c0c0;
-  --color: #333;
+  --background: #707070;
+  --color: #0f0f0f;
 }
 
+ion-button.zero-button {
+  width: calc(60px * 2); 
+  --background: #707070;
+  --color: #0f0f0f;
+}
 
 ion-button.resetar-button {
   width: calc(60px * 2); 
@@ -54,13 +58,11 @@ ion-button.resetar-button {
   --color: #fff;
 }
 
-
 ion-button.calcular-button {
   width: calc(60px * 2);
   --background: #4d94ff;
   --color: #fff;
 }
-
 
 @media only screen and (max-width: 768px) {
   h1 {

@@ -99,7 +99,8 @@ export class HomePage {
     if (!this.verifica_zero) {
       const currentValue = parseFloat(this.resultado);
       this.resultado = (currentValue / 100).toString();
-      this.memoria = `${currentValue}% = ${this.resultado}`
+      this.memoria = `${currentValue}% = ${this.resultado}`;
+      this.verifica_zero = true;
     }
   }
 
@@ -108,6 +109,7 @@ export class HomePage {
       const currentValue = parseFloat(this.resultado);
       this.resultado = (currentValue * currentValue).toString();
       this.memoria = `${currentValue}² = ${this.resultado}`;
+      this.verifica_zero = true;
     }
   }
 
@@ -120,6 +122,7 @@ export class HomePage {
         this.resultado = "Erro";
       }
       this.memoria = `√${currentValue} = ${this.resultado}`;
+      this.verifica_zero = true;
     }
   }
 
@@ -128,6 +131,7 @@ export class HomePage {
       const currentValue = parseFloat(this.resultado);
       this.resultado = Math.pow(currentValue, 3).toString();
       this.memoria = `${currentValue}³ = ${this.resultado}`;
+      this.verifica_zero = true;
     }
   }
 
@@ -140,6 +144,7 @@ export class HomePage {
         this.resultado = "Erro";
       }
       this.memoria = `³√${currentValue} = ${this.resultado}`;
+      this.verifica_zero = true;
     }
   }
 
@@ -170,6 +175,7 @@ export class HomePage {
     }
     this.resultado = fatorial.toString(); 
     this.memoria = `${num}! = ${this.resultado}`;
+    this.verifica_zero = true;
   }  
   
   resetar() {
