@@ -92,14 +92,14 @@ export class HomePage {
         alert('O segundo elemento não foi definido.');
       }
     }
-    this.memoria = '';
-    this.is_novo_calculo = true;
+
   }
 
   porcentagem() {
     if (!this.verifica_zero) {
       const currentValue = parseFloat(this.resultado);
       this.resultado = (currentValue / 100).toString();
+      this.memoria = `${currentValue}% = ${this.resultado}`
     }
   }
 
@@ -107,6 +107,7 @@ export class HomePage {
     if (!this.verifica_zero) {
       const currentValue = parseFloat(this.resultado);
       this.resultado = (currentValue * currentValue).toString();
+      this.memoria = `${currentValue}² = ${this.resultado}`;
     }
   }
 
@@ -117,8 +118,8 @@ export class HomePage {
         this.resultado = Math.sqrt(currentValue).toString();
       } else {
         this.resultado = "Erro";
-        
       }
+      this.memoria = `√${currentValue} = ${this.resultado}`;
     }
   }
 
@@ -126,6 +127,7 @@ export class HomePage {
     if (!this.verifica_zero) {
       const currentValue = parseFloat(this.resultado);
       this.resultado = Math.pow(currentValue, 3).toString();
+      this.memoria = `${currentValue}³ = ${this.resultado}`;
     }
   }
 
@@ -137,6 +139,7 @@ export class HomePage {
       } else {
         this.resultado = "Erro";
       }
+      this.memoria = `³√${currentValue} = ${this.resultado}`;
     }
   }
 
@@ -166,6 +169,7 @@ export class HomePage {
       fatorial *= i;
     }
     this.resultado = fatorial.toString(); 
+    this.memoria = `${num}! = ${this.resultado}`;
   }  
   
   resetar() {
