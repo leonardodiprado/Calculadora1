@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   resultado: string = "0";
-  memoria: string = "";
+  memoria: string = "0";
   verifica_zero: boolean = true;
   operador_inserido: boolean = false;
   is_segundo_elemento: boolean = false;
@@ -68,14 +68,17 @@ export class HomePage {
       this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
       this.is_novo_calculo = true;
+      this.verifica_zero = true;
     } else if (this.operador === '-' && this.segundo_elemento !== '') {
       this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
       this.is_novo_calculo = true;
+      this.verifica_zero = true;
     } else if (this.operador === '*' && this.segundo_elemento !== '') {
       this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
       this.memoria = this.primeiro_elemento + this.operador + this.segundo_elemento + '=' + this.resultado;
       this.is_novo_calculo = true;
+      this.verifica_zero = true;
     } else  if (this.operador === '/' && this.segundo_elemento !== '') {
       const segundoNumero = parseFloat(this.segundo_elemento);
       if (segundoNumero === 0) {
@@ -92,6 +95,7 @@ export class HomePage {
         alert('O segundo elemento não foi definido.');
       }
     }
+    this.verifica_zero = true;
 
   }
 
